@@ -17,14 +17,17 @@ class Generator:
 
         query = scene_table.select().where(scene_table.c.id == id)
         scene = await database.fetch_one(query)
-        scene_model = SceneModel(**dict(scene))
+        if scene:
+            scene_model = SceneModel(**dict(scene))
 
-        query = window_table.select().where(window_table.c.scene_id == id)
-        windows = await database.fetch_all(query)
-        windows_model = [dict(window) for window in windows]
-        scene_model.windows = windows_model
+            query = window_table.select().where(window_table.c.scene_id == id)
+            windows = await database.fetch_all(query)
+            windows_model = [dict(window) for window in windows]
+            scene_model.windows = windows_model
 
-        return SceneResponse(scene=[scene_model])
+            return SceneResponse(scene=[scene_model])
+        else:
+            return SceneResponse(scene=[])
 
     async def generate_dialog(self) -> DialogResponse:
         if self.request.start == 0 and self.request.end == 0:
