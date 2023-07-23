@@ -34,6 +34,7 @@ class DialogRequest(BaseModel):
 
 class SceneCreateModel(BaseModel):
     """Схема запроса, для endpoint создания сцены"""
+    scene_id: int
     name: str
     path_img: str
 

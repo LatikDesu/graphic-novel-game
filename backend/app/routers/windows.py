@@ -2,6 +2,7 @@ from app.db import database
 from app.models.models import window_table
 from app.models.schemas import WindowCreateModel, WindowResponse
 from fastapi import APIRouter
+from sqlalchemy.exc import IntegrityError
 
 router = APIRouter(prefix="/api/window")
 
@@ -31,8 +32,17 @@ async def create_window(window_request: WindowCreateModel):
         return {"message": "Экран уже существует"}
 
     query = window_table.insert().values(window_request.dict())
-    window_id = await database.execute(query)
-    return {"window_id": window_id}
+
+    # TODO Заменить на триггеры
+    success = False
+    while not success:
+        try:
+            await database.execute(query)
+            success = True
+        except IntegrityError:
+            database.rollback()
+
+    return {"Сцена создана": "ОК"}
 
 
 @router.put("/update",
