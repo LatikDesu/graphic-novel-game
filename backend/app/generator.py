@@ -34,7 +34,8 @@ class Generator:
             query = scene_table.select().order_by(scene_table.c.scene_id)
         else:
             query = scene_table.select().where(
-                scene_table.c.scene_id.between(self.request.start, self.request.end)).order_by(scene_table.c.scene_id)
+                scene_table.c.scene_id.between(self.request.start - 1, self.request.end - 1)).order_by(
+                scene_table.c.scene_id)
 
         scenes = await database.fetch_all(query)
         scenes_models = [await take_scene(scene) for scene in scenes]
@@ -43,7 +44,7 @@ class Generator:
 
 async def take_scene(scene) -> SceneResponse:
     scene_model = SceneModel(**dict(scene))
-    query = window_table.select().where(window_table.c.scene_id == scene.id).order_by(window_table.c.window_id)
+    query = window_table.select().where(window_table.c.scene_id == scene.scene_id).order_by(window_table.c.window_id)
     windows = await database.fetch_all(query)
     windows_model = [dict(window) for window in windows]
     scene_model.windows = windows_model
