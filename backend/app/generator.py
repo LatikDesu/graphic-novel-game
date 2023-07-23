@@ -34,7 +34,7 @@ class Generator:
             query = scene_table.select().order_by(scene_table.c.scene_id)
         else:
             query = scene_table.select().where(
-                scene_table.c.scene_id.between(self.request.start - 1, self.request.end - 1)).order_by(
+                scene_table.c.scene_id.between(self.request.start, self.request.end)).order_by(
                 scene_table.c.scene_id)
 
         scenes = await database.fetch_all(query)
