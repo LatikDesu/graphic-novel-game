@@ -17,7 +17,7 @@ class WindowModel(BaseModel):
 
 class SceneModel(BaseModel):
     """Модель сцены"""
-    id: int
+    scene_id: int
     name: str
     path_img: str
     windows: Optional[list[WindowModel]]
@@ -41,8 +41,19 @@ class SceneCreateModel(BaseModel):
 class WindowCreateModel(BaseModel):
     """Схема запроса, для endpoint создания окна"""
     scene_id: int
+    window_id: int
     character: str
     text: str
+    path_img: str
+    position: str
+
+
+class WindowResponse(BaseModel):
+    """Модель ответа на запрос окна"""
+    scene_id: int
+    window_id: int
+    text: str
+    character: str
     path_img: str
     position: str
 
