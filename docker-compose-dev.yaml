@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  backend:
+    container_name: Earth_API
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+
+    command: bash -c "uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
+    restart: unless-stopped
+    entrypoint: ./entrypoint.sh
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - .:/code
+
+  db:
+    image: postgres:15.3
+    restart: always
+    environment:
+      - POSTGRES_DB=game_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    container_name: db
+    volumes:
+      - ./backend/app/database:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 3s
+      timeout: 3s
+      retries: 5
