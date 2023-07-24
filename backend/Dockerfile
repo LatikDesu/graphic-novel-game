@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y postgresql-client
 RUN pip install --no-cache-dir --upgrade -r /code/backend/requirements.txt
 
 COPY . /code/backend
+RUN chmod +x entrypoint.sh
 
 EXPOSE 8000
 

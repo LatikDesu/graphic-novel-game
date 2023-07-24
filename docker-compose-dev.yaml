@@ -7,7 +7,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
 
-    command: bash -c "uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload && chmod +x entrypoint.sh"
+    command: bash -c "uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
     restart: unless-stopped
     entrypoint: ./entrypoint.sh
     ports:
