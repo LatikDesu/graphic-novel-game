@@ -43,6 +43,6 @@ app.add_middleware(
 )
 
 app.include_router(dialogues.router)
-app.include_router(windows.router)
 app.include_router(scenes.router)
+app.include_router(windows.router)
 app.include_router(db.router)

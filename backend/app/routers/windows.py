@@ -9,8 +9,7 @@ router = APIRouter(prefix="/api/window")
 
 @router.get("/",
             tags=['window'],
-            description='Получить экран',
-            response_model=WindowResponse)
+            description='Получить экран')
 async def get_window(scene_id: int, window_id: int):
     query = window_table.select().where(window_table.c.scene_id == scene_id).where(
         window_table.c.window_id == window_id)
@@ -33,16 +32,12 @@ async def create_window(window_request: WindowCreateModel):
 
     query = window_table.insert().values(window_request.dict())
 
-    # TODO Заменить на триггеры
-    success = False
-    while not success:
-        try:
-            await database.execute(query)
-            success = True
-        except IntegrityError:
-            database.rollback()
+    try:
+        window_id = await database.execute(query)
+    except IntegrityError:
+        window_id = database.rollback()
 
-    return {"Сцена создана": "ОК"}
+    return {"window_id": window_id}
 
 
 @router.put("/update",

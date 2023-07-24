@@ -29,16 +29,12 @@ async def create_scene(scene_request: SceneCreateModel):
 
     query = scene_table.insert().values(scene_request.dict())
 
-    # TODO Заменить на триггеры
-    success = False
-    while not success:
-        try:
-            await database.execute(query)
-            success = True
-        except IntegrityError:
-            database.rollback()
+    try:
+        scene_id = await database.execute(query)
+    except IntegrityError:
+        scene_id = database.rollback()
 
-    return {"Сцена создана": "ОК"}
+    return {"scene_id": scene_id}
 
 
 @router.put("/update",
