@@ -18,16 +18,16 @@ services:
     volumes:
       - .:/code
 
-  frontend:
-    container_name: Earth_front
-    build:
-      context: frontend
-      dockerfile: ./Dockerfile
-    restart: always
-    ports:
-      - "3006:3006"
-    expose:
-      - 3006
+  #  frontend:
+  #    container_name: Earth_front
+  #    build:
+  #      context: frontend
+  #      dockerfile: ./Dockerfile
+  #    restart: always
+  #    ports:
+  #      - "3006:3006"
+  #    expose:
+  #      - 3006
   
   db:
     image: postgres:15.3

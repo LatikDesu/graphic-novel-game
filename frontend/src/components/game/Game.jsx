@@ -37,7 +37,7 @@ const Games = () => {
           'Content-Type': 'application/json',
           // Другие заголовки, если необходимо
         },
-        body: JSON.stringify({start: '0', end: '0'}),
+        body: JSON.stringify({start: '7', end: '100'}),
       });
 
       if (response.ok) {
@@ -127,7 +127,7 @@ const Games = () => {
                   <img className={css.positionChar} src={require('../../'+dialogues[currentScene].windows[currentDialog].path_img)} alt={dialogues[currentScene].windows[currentDialog].character}/>
                 </div>
               )} */}
-              <div className={classNames(css.position,  dialogues[currentScene].windows[currentDialog].position === 'left' ? css.positionLeft : css.positionRight)} >
+              <div className={classNames(css.position,  dialogues[currentScene].windows[currentDialog].position === 'left' ? css.positionLeft : css.positionRight, dialogues[currentScene].windows[currentDialog].position === '0' ? css.windowHide : '')} >
                 <img className={css.positionChar} src={require('../../'+dialogues[currentScene].windows[currentDialog].path_img)} alt={dialogues[currentScene].windows[currentDialog].character}/>
               </div>
 
