@@ -7,7 +7,7 @@
 
 .sceneShow {
     opacity: 1;
-  }
+}
 
 .backMain {
     position: absolute;
@@ -68,7 +68,12 @@
     bottom: -0.5%;
 }
 
-.message { 
+.position {
+    position: absolute;
+    bottom: -0.5%;
+}
+
+.message {
     width: 95%;
     height: 80%;
     /* height: auto; */
@@ -95,22 +100,22 @@
 
 @keyframes imageFade {
     0% {
-      opacity: 0;
+        opacity: 0;
     }
     100% {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-  
-  .sceneFade {
-    animation: imageFade 1s ease-in-out;
-  }
+}
 
-  .loading {
+.sceneFade {
+    animation: imageFade 1s ease-in-out;
+}
+
+.loading {
     font-family: Ubuntu;
     font-size: 32px;
     font-weight: 400;
     line-height: 32px;
     letter-spacing: 0em;
     color: rgba(137, 225, 89);
-  }
+}

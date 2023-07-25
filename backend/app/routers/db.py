@@ -1,5 +1,4 @@
-from app.db import dump_database
-from fastapi import APIRouter
+from app.db import dump_database, restore_database
 
 router = APIRouter(prefix="/api/db")
 
@@ -10,8 +9,9 @@ router = APIRouter(prefix="/api/db")
 async def backup():
     dump_database()
 
-# @router.get("/restore",
-#             tags=['db'],
-#             description='Восстановить базу данных')
-# async def restore():
-#     restore_database()
+
+@router.get("/restore",
+            tags=['db'],
+            description='Восстановить базу данных')
+async def restore():
+    restore_database()
