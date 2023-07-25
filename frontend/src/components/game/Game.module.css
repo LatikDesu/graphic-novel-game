@@ -1,6 +1,6 @@
 .scene {
-    opacity: 1;
-    transition: opacity 5s ease;
+    /* opacity: 1;
+    transition: opacity 5s ease; */
     position: relative;
     width: 100%;
 }
@@ -51,17 +51,16 @@
 }
 
 .positionRight {
-    /* width: 59%; */
-    position: absolute;
-    top: 158px;
     left: 41%;
 }
 
 .positionLeft {
-    /* width: 59%; */
-    position: absolute;
-    top: 154px;
     left: 0;
+}
+
+.positionRight, .positionLeft {
+    position: absolute;
+    bottom: -0.5%;
 }
 
 .message { 
@@ -85,3 +84,16 @@
     margin-left: 60%;
     margin-bottom: 10px;
 }
+
+@keyframes imageFade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .sceneFade {
+    animation: imageFade 1s ease-in-out;
+  }
