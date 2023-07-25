@@ -4,8 +4,8 @@ services:
   backend:
     container_name: Earth_API
     build:
-      context: ./backend
-      dockerfile: Dockerfile
+      context: backend
+      dockerfile: ../../../backend/Dockerfile
 
     command: bash -c "uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
     restart: unless-stopped
@@ -18,16 +18,16 @@ services:
     volumes:
       - .:/code
 
-  #  frontend:
-  #    container_name: Earth_front
-  #    build:
-  #      context: ./frontend/
-  #      dockerfile: ./Dockerfile
-  #    restart: always
-  #    ports:
-  #      - "3006:3006"
-  #    expose:
-  #      - 3006
+  frontend:
+    container_name: Earth_front
+    build:
+      context: ./frontend/
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - "3006:3006"
+    expose:
+      - 3006
   
   db:
     image: postgres:15.3
