@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {useNavigate} from 'react-router-dom';
 // import StartScreen from "./StartScreen";
 // import startScreen from '../../assets/classroom.png';
@@ -8,8 +8,6 @@ import DarkButton from "../buttons/DarkButton";
 // import EndScreen from "./EndScreen";
 import css from '../game/Game.module.css';
 import classNames from 'classnames';
-import {APIClient} from "./api";
-import dialogues from "../../helpers/Dialogues";
 
 const Games = () => {
 
@@ -30,27 +28,33 @@ const Games = () => {
         console.log(savedScene);
     }, []);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch('https://latikdesu.art/api/dialog/', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({start: '0', end: '0'}),
-                });
-                const data = await response.json();
-                setDialogues(data.dialogues);
-            } catch (error) {
-                console.error(error);
-            }
-            setTimeout(() => {
-                fetchData();
-            }, 2000);
-        };
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await fetch('https://latikdesu.art/api/dialog/', {
+    //                 method: 'POST',
+    //                 headers: {
+    //                     'Content-Type': 'application/json',
+    //                 },
+    //                 body: JSON.stringify({start: '0', end: '0'}),
+    //             });
+    //             const data = await response.json();
+    //             setDialogues(data.dialogues);
+    //         } catch (error) {
+    //             console.error(error);
+    //         }
+    //         setTimeout(() => {
+    //             fetchData();
+    //         }, 2000);
+    //     };
+    //
+    //     fetchData();
+    // }, []);
 
-        fetchData();
+    useEffect(() => {
+        fetch('http://localhost:8000/api/dialog/')
+            .then(response => response.json())
+            .then(data => setDialogues(data));
     }, []);
 
     useEffect(() => {
@@ -97,11 +101,11 @@ const Games = () => {
     // }, []);
 
     const handlePrevDialog = () => {
-        let dialogLength = dialogues[currentScene].scene[0].windows.length;
+        let dialogLength = dialogues[currentScene].windows.length;
 
         if (currentDialog === 0 && currentScene !== 0) {
             setCurrentScene(currentScene - 1);
-            dialogLength = dialogues[currentScene - 1].scene[0].windows.length;
+            dialogLength = dialogues[currentScene - 1].windows.length;
             setCurrentDialog(dialogLength - 1);
             return;
         }
@@ -117,7 +121,7 @@ const Games = () => {
     };
 
     const handleNextDialog = () => {
-        const dialogLength = dialogues[currentScene].scene[0].windows.length;
+        const dialogLength = dialogues[currentScene].windows.length;
         const sceneLength = dialogues.length - 1;
 
         if (currentDialog < dialogLength - 1) {
@@ -143,38 +147,39 @@ const Games = () => {
     return (
         <div>
             <div>
-                <pre>{JSON.stringify(dialogues, null, 2)}</pre>
+                <pre>{JSON.stringify(dialogues[currentScene].windows[currentDialog], null, 2)}</pre>
             </div>
 
             <div className={classNames(css.scene, isAddStyle ? 'css.sceneShow' : '')}>
-                <img className={css.sceneImg} src={require('../../' + dialogues[currentScene].scene[0].path_img)}
-                     alt={dialogues[currentScene].scene[0].name}/>
+                <img className={css.sceneImg} src={require('../../' + dialogues[currentScene].path_img)}
+                     alt={dialogues[currentScene]?.name}/>
                 <div className={css.backMain}>
                     <Button onClick={async event => {
                         navigate('/start')
                     }}>Главная страница</Button>
                 </div>
-                {dialogues[currentScene].scene[0].windows[currentDialog].position == 'right' ? (
+                {dialogues[currentScene].windows[currentDialog].position == 'right' ? (
                     <div className={css.positionRight}>
                         <img className={css.positionChar}
-                             src={require('../../' + dialogues[currentScene].scene[0].widows[currentDialog].path_img)}
-                             alt={dialogues[currentScene].scene[0].windows[currentDialog].character}/>
+                             src={require('../../' + dialogues[currentScene]?.widows[currentDialog].path_img)}
+                             alt={dialogues[currentScene].windows[currentDialog].character}/>
                     </div>
                 ) : (
                     <div className={css.positionLeft}>
                         <img className={css.positionChar}
-                             src={require('../../' + dialogues[currentScene].scene[0].windows[currentDialog].path_img)}
-                             alt={dialogues[currentScene].scene[0].windows[currentDialog].character}/>
+                             src={require('../../' + dialogues[currentScene].windows[currentDialog].path_img)}
+                             alt={dialogues[currentScene].windows[currentDialog].character}/>
                     </div>
                 )
                 }
-                {/* <div className={css.positionRight}>
-                <img className={css.positionChar} src={require('../../'+dialogues[currentScene].scene[0].windows[currentDialog].path_img)} alt={dialogues[currentScene].scene[0].windows[currentDialog].character}/>
-               </div>   */}
+                {/*    /!* <div className={css.positionRight}>*/}
+                {/*    <img className={css.positionChar}
+                 src={require('../../'+dialogues[currentScene]windows[currentDialog].path_img)} alt={dialogues[currentScene].windows[currentDialog].character}/>*/}
+                {/*   </div>   *!/*/}
                 <div className={css.window}>
                     <div
-                        className={css.character}>{dialogues[currentScene].scene[0].windows[currentDialog].character}</div>
-                    <div className={css.message}>{dialogues[currentScene].scene[0].windows[currentDialog].text}</div>
+                        className={css.character}>{dialogues[currentScene].windows[currentDialog].character}</div>
+                    <div className={css.message}>{dialogues[currentScene].windows[currentDialog].text}</div>
                     <div className={css.buttons}>
                         <DarkButton onClick={handlePrevDialog}>Назад</DarkButton>
                         <DarkButton onClick={handleNextDialog}>Далее</DarkButton>

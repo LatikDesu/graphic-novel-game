@@ -11,5 +11,12 @@ router = APIRouter(prefix="/api/dialog")
              response_model=DialogResponse)
 async def get_dialog(dialog_request: DialogRequest):
     generator = Generator(request=dialog_request)
-    dialog = await generator.generate_dialog()
+    dialog = await generator.generate_post_dialog()
+    return dialog
+
+
+@router.get("/", tags=['dialog'], description='Получить список диалогов')
+async def dialog():
+    generator = Generator()
+    dialog = await generator.generate_get_dialog()
     return dialog

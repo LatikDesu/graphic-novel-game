@@ -20,7 +20,6 @@ class SceneModel(BaseModel):
     scene_id: int
     name: str
     path_img: str
-    windows: Optional[list[WindowModel]]
 
     class Config:
         orm_mode = True
@@ -62,6 +61,7 @@ class WindowResponse(BaseModel):
 class SceneResponse(BaseModel):
     """Модель ответа на запрос сцены"""
     scene: list[SceneModel]
+    windows: list[WindowResponse]
 
 
 class DialogResponse(BaseModel):
