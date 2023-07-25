@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0b86aa1-5331-435f-9b76-e1740cd27183" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../backend/app/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/app/models/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/migrations/versions/4dabfdfd3149_migration.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/game/Game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game/Game.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/game/Game.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game/Game.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/start-screen/StartScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/start-screen/StartScreen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/start-screen/StartScreen.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/start-screen/StartScreen.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,23 +30,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/repo/Phyton/HACKATON SHB/Earth-2073-fullstack/frontend/src/components/game&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/repo/Phyton/HACKATON SHB/Earth-2073-fullstack/frontend/src/components/game",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\repo\Phyton\HACKATON SHB\Earth-2073-fullstack\frontend\src\components\game" />
+      <recent name="E:\repo\Phyton\HACKATON SHB\Earth-2073-fullstack\frontend\src\components\start-screen" />
     </key>
   </component>
   <component name="RunManager">
@@ -71,6 +77,7 @@
       <updated>1690284696107</updated>
       <workItem from="1690284698241" duration="461000" />
       <workItem from="1690286070194" duration="95000" />
+      <workItem from="1690290245026" duration="1734000" />
     </task>
     <servers />
   </component>

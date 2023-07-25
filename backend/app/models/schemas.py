@@ -6,10 +6,10 @@ from pydantic import BaseModel, Field
 class WindowModel(BaseModel):
     """Модель окна"""
     window_id: int
-    character: str
-    text: str
-    path_img: str
-    position: str
+    character: Optional[str] = None
+    text: Optional[str] = None
+    path_img: Optional[str] = None
+    position: Optional[str] = None
 
     class Config:
         orm_mode = True
@@ -42,20 +42,20 @@ class WindowCreateModel(BaseModel):
     """Схема запроса, для endpoint создания окна"""
     scene_id: int
     window_id: int
-    character: str
-    text: str
-    path_img: str
-    position: str
+    character: Optional[str] = None
+    text: Optional[str] = None
+    path_img: Optional[str] = None
+    position: Optional[str] = None
 
 
 class WindowResponse(BaseModel):
     """Модель ответа на запрос окна"""
     scene_id: int
     window_id: int
-    text: str
-    character: str
-    path_img: str
-    position: str
+    text: Optional[str] = None
+    character: Optional[str] = None
+    path_img: Optional[str] = None
+    position: Optional[str] = None
 
 
 class SceneResponse(BaseModel):
