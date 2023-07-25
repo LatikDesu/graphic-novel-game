@@ -7,72 +7,35 @@ import Button from '../buttons/Button';
 import { useNavigate } from 'react-router-dom';
 
 const StartScreen = () => {
-  const navigate = useNavigate();
-  const [dialogues, setDialogues] = useState([]); // в этот массив придет dialogues
+    const navigate = useNavigate();
 
-  
-  useEffect(() => {
-    fetchDialogs();
-  }, []);
+    const handleClick = async (event) => {
+        event.preventDefault();
 
-  // const [isAddStyle, setIsAddStyle] = useState(false);
+        // Обнуление сцены в локальном хранилище
+        localStorage.removeItem('currentScene');
 
-  const fetchDialogs = async () => {
-    try {
-      const response = await fetch('http://localhost:8000/api/dialog/', {
-        method: 'POST',
-        // Дополнительные параметры запроса, если необходимо
-        headers: {
-          'Content-Type': 'application/json',
-          // Другие заголовки, если необходимо
-        },
-        body: JSON.stringify({start: '0', end: '0'}),
-      });
+        // Переход на страницу игры
+        navigate('/game');
+    };
 
-      if (response.ok) {
-        const data = await response.json();
-        setDialogues(data.dialogues);
-        console.log(data.dialogues);
-        // localStorage.setItem("dialogues", JSON.stringify(data.dialogues));
-      } else {
-        console.error('Ошибка получения диалогов:', response.status);
-      }
-    } catch (error) {
-      console.error('Ошибка:', error);
-    }
-  };
+    return (
+        <>
+            <div className={css.startScreen}>
+                {/* <img  src={startScreen}  alt="start screen"/> */}
 
-  const handleClick = async (event) => {
-    event.preventDefault();
-
-    // Обнуление сцены в локальном хранилище
-    localStorage.removeItem('currentScene');
-
-    // Переход на страницу игры
-    navigate('/game', { state: { data: dialogues } });
-  };
-
-  return (
-    <>
-    
-        <div className={css.startScreen}>
-            {/* <img  src={startScreen}  alt="start screen"/> */}
-
-            <img className={css.logo} src={logo} alt="logo" />
-            <h1 className={css.title}>
-            Земля-<span className={css.mainTitle}>2073</span>
-            </h1>
-            <div className={css.buttonsBlock}>
-                <Button type="button" onClick={handleClick}>Новая игра</Button>
-                <Button type="button" onClick={async event => {navigate('/game', { state: { data: dialogues } })}}>Продолжить</Button>
-                <Button type="button" onClick={async event => {navigate('/')}}>Выход</Button>
+                <img className={css.logo} src={logo} alt="logo" />
+                <h1 className={css.title}>
+                    Земля-<span className={css.mainTitle}>2073</span>
+                </h1>
+                <div className={css.buttonsBlock}>
+                    <Button type="button" onClick={handleClick}>Новая игра</Button>
+                    <Button type="button" onClick={async event => {navigate('/game')}}>Продолжить</Button>
+                    <Button type="button" onClick={async event => {navigate('/')}}>Выход</Button>
+                </div>
             </div>
-        </div>
-      
-      
-    
-    </>
-  )
+        </>
+    )
 };
 
 export default StartScreen;
