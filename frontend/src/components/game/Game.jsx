@@ -37,7 +37,7 @@ const Games = () => {
           'Content-Type': 'application/json',
           // Другие заголовки, если необходимо
         },
-        body: JSON.stringify({start: '7', end: '100'}),
+        body: JSON.stringify({start: '0', end: '100'}),
       });
 
       if (response.ok) {
