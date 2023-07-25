@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0b86aa1-5331-435f-9b76-e1740cd27183" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/app/routers/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/app/routers/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/database.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/migrations/versions/7cd05a8fa864_migration.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/game/Game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game/Game.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/game/Game.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game/Game.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +70,7 @@
       <updated>1690284696107</updated>
       <workItem from="1690284698241" duration="461000" />
       <workItem from="1690286070194" duration="95000" />
-      <workItem from="1690290245026" duration="5089000" />
+      <workItem from="1690290245026" duration="5260000" />
     </task>
     <servers />
   </component>

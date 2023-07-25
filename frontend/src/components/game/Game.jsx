@@ -30,14 +30,14 @@ const Games = () => {
 
   const fetchDialogs = async () => {
     try {
-      const response = await fetch('https://latikdesu.art/api/dialog/', {
+      const response = await fetch('http://localhost:8000/api/dialog/', {
         method: 'POST',
         // Дополнительные параметры запроса, если необходимо
         headers: {
           'Content-Type': 'application/json',
           // Другие заголовки, если необходимо
         },
-        body: JSON.stringify({start: '0', end: '5'}),
+        body: JSON.stringify({start: '0', end: '0'}),
       });
 
       if (response.ok) {

@@ -1,4 +1,5 @@
 from app.db import dump_database, restore_database
+from fastapi import APIRouter
 
 router = APIRouter(prefix="/api/db")
 
