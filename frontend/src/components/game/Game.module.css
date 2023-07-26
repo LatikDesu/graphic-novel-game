@@ -7,7 +7,7 @@
 
 .sceneShow {
     opacity: 1;
-}
+  }
 
 .backMain {
     position: absolute;
@@ -64,16 +64,26 @@
 }
 
 .positionRight, .positionLeft {
-    position: absolute;
-    bottom: -0.5%;
+    /* position: absolute; */
+    bottom: 0
 }
 
 .position {
     position: absolute;
-    bottom: -0.5%;
+    bottom: 0
 }
 
-.message {
+/* .positionChar {
+    width: 55%;
+} */
+
+.positionChar {
+    width: 55%;
+    position: relative;
+}
+
+
+.message { 
     width: 95%;
     height: 80%;
     /* height: auto; */
@@ -82,7 +92,7 @@
     font-family: Ubuntu;
     font-size: 16px;
     font-weight: 400;
-    line-height: 32px;
+    line-height: 28px;
     letter-spacing: 0em;
     text-align: left;
     word-wrap: break-word;
@@ -100,22 +110,26 @@
 
 @keyframes imageFade {
     0% {
-        opacity: 0;
+      opacity: 0;
     }
     100% {
-        opacity: 1;
+      opacity: 1;
     }
-}
+  }
+  
+  .sceneFade {
+    animation: imageFade 2s ease-in-out;
+  }
 
-.sceneFade {
-    animation: imageFade 1s ease-in-out;
-}
+  .scene img {
+    animation: imageFade 2s ease-in-out;
+  }
 
-.loading {
+  .loading {
     font-family: Ubuntu;
     font-size: 32px;
     font-weight: 400;
     line-height: 32px;
     letter-spacing: 0em;
     color: rgba(137, 225, 89);
-}
+  }

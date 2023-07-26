@@ -14,7 +14,7 @@ const Games = () => {
   const [currentScene, setCurrentScene] = useState(0);
   const [isAddStyle, setIsAddStyle] = useState(true);
   // const [currentWindowIndex, setCurrentWindowIndex] = useState(0); //для сохранения в локал текущего диалога
-  const [currentDialog, setCurrentDialog] = useState(0);
+  const [currentDialog, setCurrentDialog] = useState(0);  
   const [nextDialog, setNextDialog] = useState(false);
 
   useEffect(() => {
@@ -74,17 +74,17 @@ const Games = () => {
     if (currentDialog === 0 && currentScene === 0) {
       return;
     }
-
+    
     if (currentDialog < dialogLength) {
       setCurrentDialog(currentDialog - 1);
       // setIsAddStyle(true);
     }
   };
 
-  const handleNextDialog = () => {
+  const handleNextDialog = () => {    
     const dialogLength = dialogues[currentScene].windows.length;
     const sceneLength = dialogues.length - 1;
-
+  
     if ( currentDialog < dialogLength -1 ) {
       setCurrentDialog(currentDialog + 1);
       setNextDialog(true);
@@ -93,7 +93,7 @@ const Games = () => {
     }
 
     if ( currentScene === sceneLength ) {
-
+      
       console.log("Конец");
       localStorage.setItem("currentScene", '0')
       return;
@@ -111,8 +111,9 @@ const Games = () => {
   return (
 
       <div>
-        {dialogues.length ? (
-            <div className={classNames(css.scene, isAddStyle ? 'css.sceneFade' : '')}>
+          {dialogues.length ? (
+            // <div className={classNames(css.scene, isAddStyle ? css.sceneFade : '')}>
+              <div className={classNames(css.scene, css.sceneFade)}>
               {/* <img className={css.sceneImg} src={dialogues[currentScene].scene[0].path_img}  alt={dialogues[currentScene].scene[0].name}/> */}
               <img className={css.sceneImg} src={require('../../'+dialogues[currentScene].scene[0].path_img)} alt={dialogues[currentScene].scene[0].name}/>
               <div className={css.backMain}>
@@ -121,26 +122,28 @@ const Games = () => {
               {/* { dialogues[currentScene].windows[currentDialog].position === 'left' ? (
                 <div className={css.positionLeft}>
                   <img className={css.positionChar} src={require('../../'+dialogues[currentScene].windows[currentDialog].path_img)} alt={dialogues[currentScene].windows[currentDialog].character}/>
-                </div>
+                </div> 
               ) : (
                 <div className={css.positionRight}>
                   <img className={css.positionChar} src={require('../../'+dialogues[currentScene].windows[currentDialog].path_img)} alt={dialogues[currentScene].windows[currentDialog].character}/>
-                </div>
+                </div> 
               )} */}
-              <div className={classNames(css.position,  dialogues[currentScene].windows[currentDialog].position === 'left' ? css.positionLeft : css.positionRight, dialogues[currentScene].windows[currentDialog].position === '0' ? css.windowHide : '')} >
-                <img className={css.positionChar} src={require('../../'+dialogues[currentScene].windows[currentDialog].path_img)} alt={dialogues[currentScene].windows[currentDialog].character}/>
-              </div>
+              {/* <div className={classNames(css.position,  dialogues[currentScene].windows[currentDialog].position === 'left' ? css.positionLeft : css.positionRight, dialogues[currentScene].windows[currentDialog].position === '0' ? css.windowHide : '')} > */}
+
+              <div className={css.position}>
+                  <img className={classNames(css.positionChar,  dialogues[currentScene].windows[currentDialog].position === 'left' ? css.positionLeft : css.positionRight, dialogues[currentScene].windows[currentDialog].position === '0' ? css.windowHide : '')} src={require('../../'+dialogues[currentScene].windows[currentDialog].path_img)} alt={dialogues[currentScene].windows[currentDialog].character}/>
+                </div> 
 
               {/* <div className={css.positionRight}>
                 <img className={css.positionChar} src={require('../../'+dialogues[currentScene].windows[currentDialog].path_img)} alt={dialogues[currentScene].windows[currentDialog].character}/>
               </div>   */}
               <div className={classNames(css.window, dialogues[currentScene].windows[currentDialog].text === '0' ? css.windowHide : '')}>
-                <div className={css.character}>{dialogues[currentScene].windows[currentDialog].character}</div>
+                <div className={css.character}>{dialogues[currentScene].windows[currentDialog].character}</div> 
                 <div className={css.message}>
                   <TypewriterText
-                      text={dialogues[currentScene].windows[currentDialog].text}
-                      speed={typingSpeed}
-                      nextDialog={nextDialog}
+                    text={dialogues[currentScene].windows[currentDialog].text}
+                    speed={typingSpeed}
+                    nextDialog={nextDialog}
                   />
                   {/* {dialogues[currentScene].windows[currentDialog].text} */}
                 </div>
@@ -150,14 +153,14 @@ const Games = () => {
                 </div> */}
               </div>
               <div className={css.buttons}>
-                <DarkButton onClick={handlePrevDialog}>Назад</DarkButton>
-                <DarkButton onClick={handleNextDialog}>Далее</DarkButton>
+                    <DarkButton onClick={handlePrevDialog}>Назад</DarkButton>
+                    <DarkButton onClick={handleNextDialog}>Далее</DarkButton>
               </div>
-            </div>) : (
-            // Отображаем загрузочный экран или спиннер
-            <p className={css.loading}>Loading...</p>
+          </div>) : (
+          // Отображаем загрузочный экран или спиннер
+          <p className={css.loading}>Loading...</p>
         )}
-      </div>
+      </div>    
 
   )
 };
