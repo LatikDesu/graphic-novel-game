@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="chrome-extension://pgapfmffencbcimgokjghhlkolckkomb/libs/extend-native-history-api.js"></script>
+<link rel="stylesheet" href="chrome-extension://pgapfmffencbcimgokjghhlkolckkomb/fonts/outfit/font-outfit.css">
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<title>Конструктор сцен</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="custom" content="MjE0NzMz" id="snextras">
+		<link rel="stylesheet" href="{{ url_for('static', path='/aos.css') }}">
+		<link href="{{ url_for('static', path='/css2') }}" rel="stylesheet" id="sf-google-fonts">
+		<link href="{{ url_for('static', path='/styles.min.css') }}" rel="stylesheet" id="sf-custom-css">
+		<link href="{{ url_for('static', path='/preview.css') }}" rel="stylesheet">
+		<meta name="twitter:card" content="summary_large_image">
+
+</head>
+<body data-aos-easing="ease-out-cubic" data-aos-duration="500" data-aos-delay="0">
+<!-- Navigation 2 -->
+<nav class="sticky-top py-4 py-lg-7 bg-bg-1">
+		<div class="d-none d-lg-block">
+				<div class="container">
+						<div class="row justify-content-between align-items-center">
+								<div class="col-2">
+										<a href="#">
+												<img src="{{ url_for('static', path='/folded-paper.svg') }}"
+												     alt="" class="img-fluid aos-init aos-animate" data-aos="fade-down" data-aos-delay="0">
+										</a>
+								</div>
+								<div class="col-8 d-flex justify-content-end">
+										<a href="#"
+										   class="fw-bold mx-4 text-light-1 aos-init aos-animate" data-aos="fade-down" data-aos-delay="400">
+												Конструктор
+										</a>
+										<a href="#"
+										   class="fw-bold ms-4 text-light-1 aos-init aos-animate" data-aos="fade-down" data-aos-delay="500">
+												О проекте
+										</a>
+								</div>
+						</div>
+				</div>
+		</div>
+</nav>
+<!-- Header 2 -->
+<header class="py-20 text-center bg-bg-2 text-bg-1 border">
+		<div class="container">
+				<h2 class="display-3 mb-4 mb-xl-6 text-bg-1 aos-init aos-animate" data-aos="fade-down" data-aos-delay="0">
+						Конструктор сцен
+				</h2>
+				<p class="fs-1 mb-6 mb-md-8 remove-br text-bg-1 aos-init aos-animate" data-aos="fade-down" data-aos-delay="250">
+						Загрузите сцены и редактируйте
+				</p>
+		</div>
+		<div class="d-xxl-block">
+				<form action="#" method="post" enctype="multipart/form-data"
+				      class="js-ajax-form w-100  justify-content-center">
+						<input type="number" name="start" value="0" class="form-control w-auto d-lg-inline mw-100">
+						<input type="number" name="end" value="0" class="form-control  w-auto d-lg-inline mw-100">
+						<button class="btn btn-dark-2 w-auto">
+								Загрузить
+						</button>
+				</form>
+				<select name="scene"
+				        class="form-select mt-xxl-2 justify-content-center w-50 d-lg-inline mw-100" style="margin-top: 100px">
+				</select>
+		</div>
+</header>
+<!-- Content 2-->
+<section class="py-10 py-lg-20 text-center bg-bg-3">
+		<div class="container">
+				<!-- div creator -->
+		</div>
+</section>
+<!-- Footer 4 -->
+<footer class="bg-bg-3 pb-md-8 pt-md-10 py-8 text-center">
+		<div class="container">
+				<div class="mt-10 mb-8 border-bottom border-dark-3 aos-init aos-animate" data-aos="fade-down"
+				     data-aos-delay="400">
+				</div>
+				<p class="fs-5 mb-0 aos-init aos-animate" data-aos="fade-down" data-aos-delay="500">
+						Copyright © 2023
+				</p>
+		</div>
+</footer>
+
+</body>
+</html>
+
+
+<script>
+    // получить элемент формы
+    const form = document.querySelector('form');
+
+    // добавить обработчик события submit
+    form.addEventListener('submit', async (event) => {
+        // отменить действие по умолчанию (перезагрузка страницы)
+        event.preventDefault();
+
+        // создать пустой объект для хранения данных формы
+        const formData = {};
+
+        // получить данные из полей формы
+        const start = form.elements['start'].value;
+        const end = form.elements['end'].value;
+
+        // добавить данные в объект formData
+        formData['start'] = start;
+        formData['end'] = end;
+
+        const json = JSON.stringify(formData);
+
+        const response = await fetch('https://latikdesu.art/api/dialog/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                // Другие заголовки, если необходимо
+            },
+            body: json
+        });
+
+        // получить ответ в виде JSON
+        const data = await response.json();
+        const dialogues = data.dialogues;
+
+        console.log(dialogues);
+
+        // получить элемент select
+        const select = document.querySelector('select[name="scene"]');
+
+        // очистить содержимое select
+        select.innerHTML = '';
+
+        // добавить новые элементы option
+        for (const scene of dialogues) {
+            const option = document.createElement('option');
+            option.value = scene.scene[0].scene_id;
+            option.textContent = scene.scene[0].name;
+            select.appendChild(option);
+        }
+
+        // получить элемент select
+        const selector = document.querySelector('select[name="scene"]');
+
+        // добавить обработчик события change
+        selector.addEventListener('change', (event) => {
+            // получить выбранное значение
+            const selectedValue = event.target.value;
+
+            // найти соответствующую сцену в массиве dialogues
+            const selectedScene = dialogues[selectedValue].windows;
+
+            // получить элемент div
+            const position = document.querySelector('.py-10.py-lg-20.text-center.bg-bg-3 .container');
+
+            // удалить все дочерние элементы div
+            while (position.firstChild) {
+                position.removeChild(position.firstChild);
+            }
+
+            for (const window of selectedScene) {
+                const div = document.createElement('div');
+                div.className = 'd-xxl-flex';
+                div.style.marginBottom = '20px';
+
+
+                // создать вложенные элементы
+                const innerDiv1 = document.createElement('div');
+                innerDiv1.className = 'w-75 d-xxl-block';
+                innerDiv1.style.marginRight = '20px';
+                div.appendChild(innerDiv1);
+
+                const innerDiv11 = document.createElement('div');
+                innerDiv11.className = 'w-100 d-xxl-flex justify-content-center align-items-center';
+                innerDiv1.appendChild(innerDiv11);
+
+                const input1 = document.createElement('input');
+                input1.type = 'number';
+                input1.name = 'scene_id';
+                input1.value = window.scene_id;
+                input1.className = 'form-control d-xxl-inline-block';
+                input1.style.width = '80%';
+                innerDiv11.appendChild(input1);
+
+                const label1 = document.createElement('label');
+                label1.textContent = 'Scene ID';
+                label1.style.width = '30%';
+                label1.style.textAlign = 'left';
+                innerDiv11.insertBefore(label1, input1);
+
+
+                const innerDiv12 = document.createElement('div');
+                innerDiv12.className = 'w-100 d-xxl-flex justify-content-center align-items-center';
+                innerDiv1.appendChild(innerDiv12);
+
+                const input2 = document.createElement('input');
+                input2.type = 'number';
+                input2.name = 'window_id';
+                input2.value = window.window_id;
+                input2.className = 'form-control d-xxl-inline-block';
+                input2.style.width = '80%';
+                innerDiv12.appendChild(input2);
+
+                const label2 = document.createElement('label');
+                label2.textContent = 'Window ID';
+                label2.style.width = '30%';
+                label2.style.textAlign = 'left';
+                innerDiv12.insertBefore(label2, input2);
+
+
+                const innerDiv13 = document.createElement('div');
+                innerDiv13.className = 'w-100 d-xxl-flex justify-content-center align-items-center';
+                innerDiv1.appendChild(innerDiv13);
+
+                const input3 = document.createElement('input');
+                input3.type = 'text';
+                input3.name = 'character';
+                input3.value = window.character;
+                input3.className = 'form-control d-xxl-inline-block';
+                input3.style.width = '80%';
+                innerDiv13.appendChild(input3);
+
+                const label3 = document.createElement('label');
+                label3.textContent = 'Character';
+                label3.style.width = '30%';
+                label3.style.textAlign = 'left';
+                innerDiv13.insertBefore(label3, input3);
+
+
+                const innerDiv14 = document.createElement('div');
+                innerDiv14.className = 'w-100 d-xxl-flex justify-content-center align-items-center';
+                innerDiv1.appendChild(innerDiv14);
+
+                const input4 = document.createElement('input');
+                input4.type = 'text';
+                input4.name = 'position';
+                input4.value = window.position;
+                input4.className = 'form-control d-xxl-inline-block';
+                input4.style.width = '80%';
+                innerDiv14.appendChild(input4);
+
+                const label4 = document.createElement('label');
+                label4.textContent = 'Position';
+                label4.style.width = '30%';
+                label4.style.textAlign = 'left';
+                innerDiv14.insertBefore(label4, input4);
+
+
+                const innerDiv15 = document.createElement('div');
+                innerDiv15.className = 'w-100 d-xxl-flex justify-content-center align-items-center';
+                innerDiv1.appendChild(innerDiv15);
+
+                const input5 = document.createElement('input');
+                input5.type = 'text';
+                input5.name = 'path_img';
+                input5.value = window.path_img;
+                input5.className = 'form-control d-xxl-inline-block';
+                input5.style.width = '80%';
+                innerDiv15.appendChild(input5);
+
+                const label5 = document.createElement('label');
+                label5.textContent = 'Path_img';
+                label5.style.width = '30%';
+                label5.style.textAlign = 'left';
+                innerDiv15.insertBefore(label5, input5);
+
+
+                // создать вложенные элементы
+                const innerDiv2 = document.createElement('div');
+                innerDiv2.className = 'd-xxl-block w-100';
+                div.appendChild(innerDiv2);
+
+                const input6 = document.createElement('textarea');
+                input6.name = 'text';
+                input6.value = window.text;
+                input6.className = 'form-control d-xxl-inline';
+                input6.rows = 4;
+                input6.style.height = '250px';
+                innerDiv2.appendChild(input6);
+
+                // создать вложенные элементы
+                const innerDiv2_1 = document.createElement('div');
+                innerDiv2_1.className = 'd-xxl-flex justify-content-xxl-end';
+                innerDiv2.appendChild(innerDiv2_1);
+
+                const button_save = document.createElement('a');
+                button_save.href = '#';
+                button_save.className = 'btn d-xxl-block btn-dark-3';
+                button_save.textContent = 'Сохранить';
+                innerDiv2_1.appendChild(button_save);
+
+                const button_delete = document.createElement('a');
+                button_delete.href = '#';
+                button_delete.className = 'btn d-xxl-block btn-dark-1';
+                button_delete.textContent = 'Удалить';
+                innerDiv2_1.appendChild(button_delete);
+
+                const hr = document.createElement('hr');
+                hr.style.border = 'none';
+                hr.style.height = '5px';
+                hr.style.backgroundColor = 'black';
+
+                // получить элемент div
+                const position = document.querySelector('.py-10.py-lg-20.text-center.bg-bg-3 .container');
+                position.appendChild(div);
+                position.appendChild(hr);
+
+            }
+
+        });
+    });
+</script>
+
+
+

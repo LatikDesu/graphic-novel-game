@@ -5,43 +5,70 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0b86aa1-5331-435f-9b76-e1740cd27183" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/chapter_4_lab.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/chapter_6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/chapter_7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/school_tube.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/database.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/migrations/versions/845d20667eb6_migration.py" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/app/routers/constructor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/app/static/aos.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/app/static/css2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/app/static/folded-paper.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/app/static/preview.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/app/static/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/app/static/styles.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scenas/chapter_vertical_farm.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/AliceCalm.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/characters/AliceCalm.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/AliceSmile.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/characters/AliceSmile.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/AliceThinking.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/characters/AliceThinking.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/ArtemCalm.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/characters/ArtemCalm.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/ArtemSmile.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/characters/ArtemSmile.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/ArtemThinking.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/characters/ArtemThinking.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/DenisCalm.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/characters/DenisCalm.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/DenisSmile.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/characters/DenisSmile.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/DenisThinking.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/characters/DenisThinking.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/ElinaCalm.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/characters/ElinaCalm.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/ElinaSmile.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/characters/ElinaSmile.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/MarinaThinking.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/characters/MarinaThinking.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/MaximCalm.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/characters/MaximCalm.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/MaximSmile.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/characters/MaximSmile.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/MaximThinking.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/characters/MaximThinking.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/Chapter_1_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scenas/vertical_farm.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/Chapter_2_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/Chapter_3_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scenas/chapter_5_lab.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/future_dump_scene_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scenas/future_dump_scene_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/future_dump_scene_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scenas/future_dump_scene_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/future_dump_scene_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scenas/future_dump_scene_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/future_portal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scenas/future_portal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/characters/AliceCalm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/characters/AliceSmile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/characters/AliceThinking.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/characters/AlisaSmile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/characters/AlisaThinking.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/characters/ArtemCalm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/characters/ArtemSmile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/characters/ArtemThinking.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/characters/DenisCalm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/characters/DenisSmile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/characters/DenisThinking.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/characters/ElinaCalm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/characters/ElinaSmile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/characters/ElinaThinking.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/characters/MarinaCalm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/characters/MarinaSmile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/characters/MarinaThinking.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/characters/MaximCalm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/characters/MaximSmile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/characters/MaximThinking.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/characters/dot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/scenas/Chapter_1_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/scenas/Chapter_2_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/scenas/Chapter_3_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/scenas/future_dump_scene_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/scenas/future_dump_scene_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/scenas/future_dump_scene_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/scenas/future_group_photo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/scenas/future_portal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/scenas/future_scene_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/scenas/future_scene_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/scenas/future_scene_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/scenas/future_scene_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/scenas/garden.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/scenas/house.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/scenas/plant_lab.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/scenas/portal_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/scenas/portal_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/scenas/portal_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/scenas/room.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/scenas/schoolclass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/scenas/start_lab.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/assets/startScreen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scenas/chapter_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scenas/chapter_6.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/scenas/future_scene_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scenas/future_scene_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/future_scene_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scenas/future_scene_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/future_scene_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scenas/future_scene_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/future_scene_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scenas/future_scene_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scenas/portal_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scenas/portal_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scenas/vertical_farm.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scenas/vertical_farm.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/bank-page/BankPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bank-page/BankPage.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/game/Game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game/Game.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/game/Game.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game/Game.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/start-screen/StartScreen.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/start-screen/StartScreen.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,20 +86,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/repo/Phyton/HACKATON SHB/Earth-2073-fullstack/frontend/src/assets/scenas",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/repo/Phyton/HACKATON SHB/Earth-2073-fullstack/frontend/src/assets/scenas&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\repo\Phyton\HACKATON SHB\Earth-2073-fullstack\frontend\src\assets\scenas" />
@@ -108,7 +135,8 @@
       <updated>1690284696107</updated>
       <workItem from="1690284698241" duration="461000" />
       <workItem from="1690286070194" duration="95000" />
-      <workItem from="1690290245026" duration="30802000" />
+      <workItem from="1690290245026" duration="33245000" />
+      <workItem from="1690449320977" duration="8781000" />
     </task>
     <servers />
   </component>

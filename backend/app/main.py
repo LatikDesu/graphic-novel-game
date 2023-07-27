@@ -3,9 +3,11 @@ from logging.config import dictConfig
 import sqlalchemy
 from app.db import DATABASE_URL, database
 from app.logger import LogConfig
-from app.routers import dialogues, windows, scenes, db
+from app.routers import dialogues, windows, scenes, db, constructor
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
+from starlette.staticfiles import StaticFiles
+from starlette.templating import Jinja2Templates
 
 dictConfig(LogConfig().dict())
 
@@ -42,7 +44,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.mount("/static", StaticFiles(directory="app/static"), name="static")
+
 app.include_router(dialogues.router)
 app.include_router(scenes.router)
 app.include_router(windows.router)
 app.include_router(db.router)
+app.include_router(constructor.router)
