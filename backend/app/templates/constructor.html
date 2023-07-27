@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="chrome-extension://pgapfmffencbcimgokjghhlkolckkomb/fonts/outfit/font-outfit.css">
 <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 		<title>Конструктор сцен</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="custom" content="MjE0NzMz" id="snextras">
@@ -131,9 +131,9 @@
         select.innerHTML = '';
 
         // добавить новые элементы option
-        for (const scene of dialogues) {
+        for (const [index, scene] of dialogues.entries()) {
             const option = document.createElement('option');
-            option.value = scene.scene[0].scene_id;
+            option.value = index;
             option.textContent = scene.scene[0].name;
             select.appendChild(option);
         }
