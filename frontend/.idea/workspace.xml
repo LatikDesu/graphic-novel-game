@@ -5,125 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0b86aa1-5331-435f-9b76-e1740cd27183" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/characters/AliceCalm.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/characters/AliceSmile.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/characters/AliceThinking.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/characters/ArtemCalm.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/characters/ArtemSmile.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/characters/ArtemThinking.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/characters/DenisCalm.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/characters/DenisSmile.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/characters/DenisThinking.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/characters/ElinaCalm.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/characters/ElinaSmile.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/characters/ElinaThinking.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/characters/MarinaCalm.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/characters/MarinaSmile.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/characters/MarinaThinking.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/characters/MaximCalm.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/characters/MaximSmile.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/characters/MaximThinking.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/characters/dot.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/chapter _0_logo.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/chapter _1_logo.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/chapter_4_lab.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/chapter_4_logo.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/chapter_5_lab.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/chapter_5_logo.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/chapter_6.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/chapter_6_logo.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/chapter_7.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/chapter_7_logo.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/chapter_last.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/chapter_vertical_farm.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/future_dump_scene_1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/future_dump_scene_2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/future_dump_scene_3.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/future_group_photo.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/future_portal.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/future_scene_1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/future_scene_2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/future_scene_3.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/future_scene_4.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/garden.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/house.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/last_screen.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/plant_lab.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/portal_1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/portal_2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/portal_3.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/room.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/school_tube.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/schoolclass.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/start_lab.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scenas/vertical_farm.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/startScreenAdd.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/database.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Earth.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/AliceCalm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/AliceSmile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/AliceThinking.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/AlisaSmile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/AlisaThinking.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/ArtemCalm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/ArtemSmile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/ArtemThinking.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/DenisCalm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/DenisSmile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/DenisThinking.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/ElinaCalm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/ElinaSmile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/ElinaThinking.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/MarinaCalm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/MarinaSmile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/MarinaThinking.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/MaximCalm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/MaximSmile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/MaximThinking.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/characters/dot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/chapter _0_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/chapter _1_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/chapter_4_lab.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/chapter_4_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/chapter_5_lab.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/chapter_5_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/chapter_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/chapter_6_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/chapter_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/chapter_7_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/chapter_last.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/chapter_vertical_farm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/future_dump_scene_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/future_dump_scene_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/future_dump_scene_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/future_group_photo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/future_portal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/future_scene_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/future_scene_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/future_scene_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/future_scene_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/garden.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/house.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/last_screen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/plant_lab.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/portal_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/portal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/portal_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/room.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/school_tube.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/schoolclass.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/start_lab.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scenas/vertical_farm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/bank-page/BankPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bank-page/BankPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/game/Game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game/Game.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/game/ImageLoad.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/game/api.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/MiniGame.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/MiniGamePuzzle.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/start-screen/StartScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/start-screen/StartScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/start-screen/StartScreen.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/start-screen/StartScreen.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/Dialogues.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +34,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/repo/Phyton/HACKATON SHB/Earth-2073-fullstack/frontend/src/assets/scenas",
+    "last_opened_file_path": "E:/repo/Phyton/HACKATON SHB/Earth-2073-fullstack/frontend/src/assets",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -158,11 +46,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\repo\Phyton\HACKATON SHB\Earth-2073-fullstack\frontend\src\assets" />
+      <recent name="E:\repo\Phyton\HACKATON SHB\Earth-2073-fullstack\frontend" />
       <recent name="E:\repo\Phyton\HACKATON SHB\Earth-2073-fullstack\frontend\src\assets\scenas" />
       <recent name="E:\repo\Phyton\HACKATON SHB\Earth-2073-fullstack\frontend\src" />
-      <recent name="E:\repo\Phyton\HACKATON SHB\Earth-2073-fullstack\frontend" />
       <recent name="E:\repo\Phyton\HACKATON SHB\Earth-2073-fullstack\frontend\src\assets\characters" />
-      <recent name="E:\repo\Phyton\HACKATON SHB\Earth-2073-fullstack\frontend\src\components\game" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\repo\Phyton\HACKATON SHB\Earth-2073-fullstack\frontend\src\assets\scenas" />
@@ -196,7 +84,7 @@
       <workItem from="1690284698241" duration="461000" />
       <workItem from="1690286070194" duration="95000" />
       <workItem from="1690290245026" duration="33245000" />
-      <workItem from="1690449320977" duration="14023000" />
+      <workItem from="1690449320977" duration="19240000" />
     </task>
     <servers />
   </component>

@@ -5,18 +5,48 @@ import DarkButton from "../buttons/DarkButton";
 import TypewriterText from './TypewriterText';
 import css from '../game/Game.module.css';
 import classNames from 'classnames';
+// import useSound from 'use-sound';
+import sound from '../../assets/Earth.mp3';
+
 
 const Games = () => {
   const [dialogues, setDialogues] = useState([]); // в этот массив придет dialogues
   const navigate = useNavigate();
-  const typingSpeed = 25; //Скорость печати в миллисекундах 
+  const typingSpeed = 25; //Скорость печати в миллисекундах
   const [currentScene, setCurrentScene] = useState(0);
   // const [isAddStyle, setIsAddStyle] = useState(true);
   // const [currentWindowIndex, setCurrentWindowIndex] = useState(0); //для сохранения в локал текущего диалога
-  const [currentDialog, setCurrentDialog] = useState(0);  
+  const [currentDialog, setCurrentDialog] = useState(0);
   const [nextDialog, setNextDialog] = useState(false);
   // const [imagesLoaded, setImagesLoaded] = useState(false);
   const [loading, setLoading] = useState(true);
+  // const soundUrl = '/sounds/guitar-loop.mp3';
+
+  // useEffect(() => {
+  //   const audio = new Audio(sound); // Создание элемента Audio
+  //   audio.play(); // Воспроизведение звукового файла
+
+  //   // return () => {
+  //   //   audio.pause(); // При необходимости остановите воспроизведение перед размонтированием компонента
+  //   // };
+  // }, []);
+
+  // useEffect(() => {
+  //   const audio = new Audio(sound);
+  //   audio.addEventListener('ended', () => {
+  //     audio.currentTime = 0;
+  //     audio.play();
+  //   });
+  //   audio.play();
+
+  //   return () => {
+  //     // audio.pause();
+  //     audio.removeEventListener('ended', () => {
+  //       audio.currentTime = 0;
+  //       audio.play();
+  //     });
+  //   };
+  // }, []);
 
   useEffect(() => {
     //Получение данных из localStorage
@@ -38,14 +68,14 @@ const Games = () => {
           'Content-Type': 'application/json',
           // Другие заголовки, если необходимо
         },
-        body: JSON.stringify({start: '0', end: '100'}),
+        body: JSON.stringify({start: '0', end: '0'}),
       });
 
       if (response.ok) {
         const data = await response.json();
         setDialogues(data.dialogues);
         console.log(data.dialogues);
-        setLoading(false); 
+        setLoading(false);
         // localStorage.setItem("dialogues", JSON.stringify(data.dialogues));
       } else {
         console.error('Ошибка получения диалогов:', response.status);
@@ -54,6 +84,8 @@ const Games = () => {
       console.error('Ошибка:', error);
     }
   };
+
+  // const [play, { stop, isPlaying }] = useSound(soundUrl);
 
   const handlePrevDialog = () => {
     let dialogLength = dialogues[currentScene].windows.length;
@@ -68,17 +100,17 @@ const Games = () => {
     if (currentDialog === 0 && currentScene === 0) {
       return;
     }
-    
+
     if (currentDialog < dialogLength) {
       setCurrentDialog(currentDialog - 1);
       // setIsAddStyle(true);
     }
   };
 
-  const handleNextDialog = () => {    
+  const handleNextDialog = () => {
     const dialogLength = dialogues[currentScene].windows.length;
     const sceneLength = dialogues.length - 1;
-  
+
     if ( currentDialog < dialogLength -1 ) {
       setCurrentDialog(currentDialog + 1);
       setNextDialog(true);
@@ -103,42 +135,42 @@ const Games = () => {
   return (
 
       <div>
-          {!loading ? (
+        {!loading ? (
             // <div className={classNames(css.scene, isAddStyle ? css.sceneFade : '')}>
-              
-              
-              <div className={classNames(css.scene, css.sceneFade)}>
+
+
+            <div className={classNames(css.scene, css.sceneFade)}>
               {/* <img className={css.sceneImg} src={dialogues[currentScene].scene[0].path_img}  alt={dialogues[currentScene].scene[0].name}/> */}
               <img className= {classNames(
-                (
-                  dialogues[currentScene].windows[currentDialog].window_id === 0 && nextDialog && dialogues[currentScene].windows[currentDialog].text !== "0"
-                ) || (
-                  dialogues[currentScene].windows[currentDialog].window_id === 1 && nextDialog && dialogues[currentScene].windows[currentDialog-1].text === "0"
-                )  ? css.sceneFade : '' )}
-                 src={require('../../'+dialogues[currentScene].scene[0].path_img)} alt={dialogues[currentScene].scene[0].name}/>
+                  (
+                      dialogues[currentScene].windows[currentDialog].window_id === 0 && nextDialog && dialogues[currentScene].windows[currentDialog].text !== "0"
+                  ) || (
+                      dialogues[currentScene].windows[currentDialog].window_id === 1 && nextDialog && dialogues[currentScene].windows[currentDialog-1].text === "0"
+                  )  ? css.sceneFade : '' )}
+                   src={require('../../'+dialogues[currentScene].scene[0].path_img)} alt={dialogues[currentScene].scene[0].name}/>
               <div className={css.backMain}>
                 <Button onClick={async event => {navigate('/start')}}>Главная страница</Button>
               </div>
 
               <div className={classNames(css.position,  dialogues[currentScene].windows[currentDialog].position === '0' ? css.windowHide : '', (
                   dialogues[currentScene].windows[currentDialog].window_id === 0 && nextDialog && dialogues[currentScene].windows[currentDialog].text !== "0"
-                ) || (
+              ) || (
                   dialogues[currentScene].windows[currentDialog].window_id === 1 && nextDialog && dialogues[currentScene].windows[currentDialog-1].text === "0"
-                )  ? css.sceneFade : '')} >
-                  <img className={classNames(css.positionChar,  dialogues[currentScene].windows[currentDialog].position === 'left' ? css.positionLeft : css.positionRight)} src={require('../../'+dialogues[currentScene].windows[currentDialog].path_img)} alt={dialogues[currentScene].windows[currentDialog].character}/>
-              </div> 
+              )  ? css.sceneFade : '')} >
+                <img className={classNames(css.positionChar,  dialogues[currentScene].windows[currentDialog].position === 'left' ? css.positionLeft : css.positionRight)} src={require('../../'+dialogues[currentScene].windows[currentDialog].path_img)} alt={dialogues[currentScene].windows[currentDialog].character}/>
+              </div>
 
               <div className={classNames(css.window, dialogues[currentScene].windows[currentDialog].text === '0' ? css.windowHide : '',(
                   dialogues[currentScene].windows[currentDialog].window_id === 0 && nextDialog && dialogues[currentScene].windows[currentDialog].text !== "0"
-                ) || (
+              ) || (
                   dialogues[currentScene].windows[currentDialog].window_id === 1 && nextDialog && dialogues[currentScene].windows[currentDialog-1].text === "0"
-                )  ? css.sceneFade : '')}>
-                <div className={css.character}>{dialogues[currentScene].windows[currentDialog].character}</div> 
+              )  ? css.sceneFade : '')}>
+                <div className={css.character}>{dialogues[currentScene].windows[currentDialog].character}</div>
                 <div className={css.message}>
                   <TypewriterText
-                    text={dialogues[currentScene].windows[currentDialog].text}
-                    speed={typingSpeed}
-                    nextDialog={nextDialog}
+                      text={dialogues[currentScene].windows[currentDialog].text}
+                      speed={typingSpeed}
+                      nextDialog={nextDialog}
                   />
                   {/* {dialogues[currentScene].windows[currentDialog].text} */}
                 </div>
@@ -148,14 +180,14 @@ const Games = () => {
                 </div> */}
               </div>
               <div className={classNames(css.buttons, dialogues[currentScene].windows[currentDialog].name === "КОНЕЦ" ? css.windowHide : '')}>
-                    <DarkButton onClick={handlePrevDialog}>Назад</DarkButton>
-                    <DarkButton onClick={handleNextDialog}>Далее</DarkButton>
+                <DarkButton onClick={handlePrevDialog}>Назад</DarkButton>
+                <DarkButton onClick={handleNextDialog}>Далее</DarkButton>
               </div>
-          </div>) : (
-          // Отображаем загрузочный экран или спиннер
-          <p className={css.loading}>Loading...</p>
+            </div>) : (
+            // Отображаем загрузочный экран или спиннер
+            <p className={css.loading}>Loading...</p>
         )}
-      </div>    
+      </div>
 
   )
 };
