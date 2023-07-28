@@ -1,6 +1,4 @@
 .startScreen {
-    /* opacity: 1;
-    transition: opacity 5s ease; */
     z-index: 0;
     width: 100%;
     align-items: center;
@@ -23,8 +21,20 @@
     flex-direction: column;
     position: absolute;
     align-items: center;
-    height: 50%;
-    justify-content: space-between;
+    /* height: 50%;
+    justify-content: space-between; */
+
+    height: 55%;
+    justify-content: space-around;
+    left: 55%;
+}
+
+.logo {
+    margin-top: 100px;
+}
+
+.title {
+    margin-top: -60px;
 }
 
 .buttonsBlock {
@@ -36,13 +46,13 @@
 
 @keyframes imageFade {
     0% {
-      opacity: 0;
+        opacity: 0;
     }
     100% {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-  
-  /* .fade {
-    animation: imageFade 2s ease-in-out;
-  } */
+}
+
+/* .fade {
+  animation: imageFade 2s ease-in-out;
+} */
