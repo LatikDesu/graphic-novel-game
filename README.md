@@ -41,5 +41,13 @@
 ```
 docker-compose build
 docker-compose up
+
+или
+
+docker-compose up -d --build
 ```
 
+Зайти на бэкенд и выполнить Restore базы данных
+http://localhost:8000/api/db/restore
+
+Наслаждайтесь!
