@@ -51,3 +51,5 @@ docker-compose up -d --build
 http://localhost:8000/api/db/restore
 
 Наслаждайтесь!
+
+PS Конструкетор сцен http://localhost:8000/constructor
