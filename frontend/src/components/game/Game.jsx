@@ -61,7 +61,7 @@ const Games = () => {
 
   const fetchDialogs = async () => {
     try {
-      const response = await fetch('https://latikdesu.art/api/dialog/', {
+      const response = await fetch('http://localhost:8000/api/dialog/', {
         method: 'POST',
         // Дополнительные параметры запроса, если необходимо
         headers: {
